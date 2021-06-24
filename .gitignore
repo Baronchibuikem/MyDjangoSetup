@@ -24,7 +24,7 @@ src/static_root/
 src/static_dist/
 .mypy_cache
 .pytest_cache
-test_cov_report
+test_cov_report/
 
 # Python compiled byte code
 *.pyc
