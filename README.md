@@ -35,18 +35,19 @@ Tools completely configured
 
 ## Testing
 
-- `$ ./scripts/test_local_backend.sh`
-
+- `$ ./scripts/run_testcases.sh`
 
 ### To run black
+- `$ ./scripts/run_blank.sh`
 
-- `$ black src`
-- `$ black tests`
-## Static analysis
+### To run mypy
+- `$ ./scripts/run_mypy.sh`
 
-- `$ ./scripts/static_validate_backend.sh`
+### To run prospector
+- `$ ./scripts/run_prospector.sh`
+## You can run all the above script using the command below
 
-### To run mypy we need to run it inside the src folder
+Before you push your code after running all the inidvidual scripts, I recommend you run this script to be sure everything is covered
 
-- `$ cd src/ `
-- `$ mypy .`
+- `$ ./scripts/validate_backend_code.sh`
+

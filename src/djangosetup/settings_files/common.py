@@ -174,7 +174,7 @@ logging.config.dictConfig(
             'file': {
                 'level': 'DEBUG',
                 'class': 'logging.FileHandler',
-                'filename': "logFiles/infoFiles.txt",
+                'filename': os.path.join(BASE_DIR, "logFiles/infoFiles.txt"),
             },
         },
         'loggers': {'django': {'handlers': ['file'], 'level': LOGLEVEL, 'propagate': True}},
