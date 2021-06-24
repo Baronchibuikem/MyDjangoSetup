@@ -22,7 +22,7 @@ COPY ./entrypoint.sh .
 # copy project
 RUN mkdir /app
 WORKDIR /app
-COPY . /app
+COPY src/ /app
 RUN chmod +x /entrypoint.sh
 
 # RUN mkdir -p /vol/web/media

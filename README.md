@@ -1,25 +1,50 @@
-## To Start the project
+## About the project
+This is a configured django setup with basic setup already done out of the box for you. 
+Note: This setup was done using ubuntu os.
 
-            docker-compose exec db psql --username=hello_django --dbname=hello_django_dev   ---> create database
-            docker-compose up -d --build   ---> build the container and start it
-            docker-compose down -v         ---> take down the container and associated volume
-            docker-compose -logs -f        ---> view your logs
-            docker volume inspect djdocker_postgres_data   ---> check that postgres volumes where created
-            sudo docker-compose run db bash
+Tools completely configured
 
+    docker
+    black
+    mypy
+    bandit
+    prospector
+    pytest
+    celery
+    django
+    djangorest
+    postgres
+
+## Getting Started
+
+    git clone https://github.com/Baronchibuikem/mydjangosetup
+    pip install -r requirement.txt
+    cd src
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py runserver
+
+## To run the project with docker
+
+    docker-compose exec db psql --username=djangosetup --dbname=djangosetup_dev   
+    docker-compose up -d --build
+    docker-compose down -v
+    docker-compose -logs -f
+    docker volume inspect djdocker_postgres_data
+    docker-compose run db bash
 
 ## Testing
 
 - `$ ./scripts/test_local_backend.sh`
 
-## Static analysis
-
-- `$ ./scripts/static_validate_backend.sh`
 
 ### To run black
 
 - `$ black src`
 - `$ black tests`
+## Static analysis
+
+- `$ ./scripts/static_validate_backend.sh`
 
 ### To run mypy we need to run it inside the src folder
 

@@ -1,16 +1,9 @@
-from settings.common_settings import *
 from decouple import config
+from djangosetup.settings_files.common import *  # NOQA (ignore all errors on this line)
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+DEBUG = False
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     "default": {

@@ -3,7 +3,7 @@ __pycache__
 staticfiles
 
 # IDEs
-.env
+# .env
 .project
 .pydevproject
 .idea
@@ -58,5 +58,3 @@ celerybeat.pid
 scripts/
 media/
 
-# bank statement scrapper
-statement_*

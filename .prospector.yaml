@@ -1,13 +1,18 @@
 # This will enable almost every single warning
-allow-shorthand: false
+inherits:
+  - strictness_veryhigh
+
+uses:
+    - django
+    - celery
 
 ignore-patterns:
-  - (^|/)\..+
+  - ^setup.py$
+  - wsgi.py$
+  - ^static
 
 pylint:
   disable:
-    - fixme
-    - bad-continuation
     - missing-final-newline
     - too-few-public-methods
     - too-many-ancestors
@@ -38,18 +43,35 @@ pylint:
 
 mccabe:
   options:
-    max-complexity: 10
+    max-complexity: 20
 
 pep8:
   options:
-    max-line-length: 79
-    single-line-if-stmt: n
+    max-line-length: 120
+  disable:
+    - W292  # no newline at end of file
+    - W391  # blank line at end of file
+    - E402
 
 pyroma:
   disable:
-    - PYR19
-    - PYR16
+    - PYR15
+    - PYR18
+    - PYR17
 
 pep257:
+  run: true
   disable:
-    - D000
+    - D100  # Missing docstring in public module
+    - D101  # Missing docstring in public class
+    - D104  # Missing docstring in public package
+    - D106  # Missing docstring in public nested class
+    - D202  # No blank lines allowed after function docstring
+    - D203  # 1 blank line required before class docstring
+    - D212  # Multi-line docstring summary should start at the first line
+
+dodgy:
+  run: false
+
+pyflakes:
+  run: false
